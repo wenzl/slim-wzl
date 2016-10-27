@@ -1,20 +1,23 @@
-# Slim 3 Skeleton
+# 基于Slim 3 Skeleton多用户博客系统
 
-一个 `skeleton` 项目，从 `akrabat/slim3-skeleton` fork下来的， 包含 `scaffold` 、 `migrations`、`auth`、`Twig`、 `Flash messages`、 `eloquent ORM and Monolog`.
+一个 `skeleton` 项目，从 `akrabat/slim3-skeleton` fork下来的， 包含 `scaffold` 、 `migrations`、`auth`、`Twig`、 `Flash messages`、 `eloquent ORM and Monolog`.对该项目进行的实际开发与拓展案例.
 
 ## 创建你的项目：
 
+	原作者项目
     $ composer create-project -n -s dev mrcoco/slim3-eloquent-skeleton my-app
-
+	
+	本项目，使用git
+	$ git clone https://github.com/wenzl/slim-wzl.git 
 如果速度慢造成创建不了你的项目，请运行下面命令再执行上面命令【切换国内`composer`镜像】
 
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
 ## 运行:
 
-1. `$ cd my-app` 进入项目目录
-2. Change database setting `app\setting.php` 配置数据库详细
-3. `$ php cli.php migrate` 还原数据表
+1. `$ cd my-app` 进入你的项目目录
+2. Change database setting `app\setting.php` 配置你的数据库详细
+3. `$ php cli.php migrate` 还原数据表，前提是配置好数据库项
 4. `$ php -S 0.0.0.0:8888 -t public public/index.php` 运行程序
 5. Browse to http://localhost:8888 如果正常访问，那么恭喜你
 
