@@ -6,6 +6,7 @@
  */
 $app->group('/home', function(){
     $this->get('/', 'App\Action\HomeAction:dispatch')->setName('homepage');
+    $this->get('/resource', 'App\Action\HomeAction:resource')->setName('resource');
     $this->get('/login', 'App\Action\HomeAction:login')->setName('login');
     $this->get('/logout', 'App\Action\HomeAction:logout')->setName('logout');
     $this->get('/register', 'App\Action\HomeAction:register')->setName('register');

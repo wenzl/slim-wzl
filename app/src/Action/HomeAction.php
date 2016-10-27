@@ -158,4 +158,14 @@ final class HomeAction
         $this->view->render($response, 'home/register.twig',['errors' => $v->errors(),'flash' => $flash,'request' => $request]);
         return $response;
     }
+
+    public function resource(Request $request, Response $response, $args){
+        $this->logger->info("Home page action dispatched");
+
+        $this->view->render($response, 'home/resource.twig',[
+            'user' => User::all(),
+
+        ]);
+        return $response;
+    }
 }
