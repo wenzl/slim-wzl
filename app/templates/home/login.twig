@@ -1,0 +1,29 @@
+{% extends 'home/layout.twig' %}
+
+{% set title = '登录 ' %}
+{% block title %}{{ title }}{% endblock %}
+{% block sidebar %}{% endblock %}
+{% block content %}
+    <div id="main">
+        <form action="login" method="post" autocomplete="off">
+            <div>{% if flash %}{{ flash }}{% endif %}</div>
+            <div class="form-group {% if errors.first('identifier') %}has-error{% endif %}">
+                <label for="identifier">用户名/邮箱</label>
+                <input class="form-control" type="text" name="identifier" id="identifier">
+                {% if errors.first('identifier') %}{{ errors.first('identifier') }}{% endif %}
+            </div>
+
+            <div class="form-group {% if errors.first('identifier') %}has-error{% endif %}">
+                <label for="password">密码</label>
+                <input class="form-control" type="password" name="password" id="password">
+                {% if errors.first('password') %}{{ errors.first('password') }}{% endif %}
+            </div>
+            <input type="hidden" name="csrf_name" value="{{ csrf.name }}">
+            <input type="hidden" name="csrf_value" value="{{ csrf.value }}">
+
+            <div class="">
+                <input type="submit" value="Login" class="btn btn-primary btn-primary">
+            </div>
+        </form>
+    </div>
+{% endblock %}

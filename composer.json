@@ -21,7 +21,7 @@
         "slim/twig-view": "^1.1",
         "slim/flash": "^0.1.0",
         "monolog/monolog": "^1.13",
-        "illuminate/database": "^5.1",
+        "illuminate/database": "^5.2.0",
         "slim/csrf": "^0.5.0",
         "davedevelopment/phpmig": "^1.2",
         "zeuxisoo/slim-whoops": "^0.4.0",
@@ -29,7 +29,13 @@
         "carlosocarvalho/simple-input": "^1.0",
         "symfony/process": "^3.0"
     },
+	"config":{
+		"process-timeout":3600
+	},
     "scripts": {
+		"start": [
+            "php -S 0.0.0.0:8080 -t public"
+        ],
         "post-update-cmd": [
             "php cli.php migrate"
         ]

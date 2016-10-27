@@ -2,18 +2,18 @@
 $app->add($app->getContainer()->get('csrf'));
 $app->add(function($request, $response, $next){
 	switch ($request->getUri()->getPath()) {
-		case '/':
+		case '/home/':
 			break;
-		case '/login':
+		case '/home/login':
 			//$response->write(' Please Insert Username and password ');
 			break;
-		case '/register':
+		case '/home/register':
 			
 			break;
-		case '/logout':
+		case '/home/logout':
 			//$response->write(' logout ');
 			break;
-		case '/dashboard':
+		case '/home/dashboard':
 			if(! App\Helper\Acl::isLogged()){
 		        return $response->withRedirect('login');
 		    }
@@ -26,7 +26,7 @@ $app->add(function($request, $response, $next){
 			if($routes){
 				if(! $routes->count() == 0){
 					if(! App\Helper\Acl::cekPermission($routes->page,$routes->action)){
-						return $this->view->render($response, 'dashboard.twig',['flash' => 'You dont have permission to access '.$request->getUri()->getPath() ] );
+						return $this->view->render($response, 'home/dashboard.twig',['flash' => 'You dont have permission to access '.$request->getUri()->getPath() ] );
 					} 
 				}
 			}		

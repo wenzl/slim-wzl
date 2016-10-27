@@ -42,12 +42,12 @@ class Acl
 		
 	}
 
-	public function getRoute($routes)
+	public static function getRoute($routes)
 	{
 		$route = str_replace('/', '', $routes);
 		return Route::where('route',$route)->first();
 	}
-	public function isLogged()
+	public static function isLogged()
 	{
 		if(isset($_SESSION['user_id'])){
             return true;

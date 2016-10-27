@@ -38,7 +38,7 @@ final class HomeAction
     {
         $this->logger->info("Home page action dispatched");
         
-        $this->view->render($response, 'home.twig',[
+        $this->view->render($response, 'home/home.twig',[
             'user' => User::all(),
             
             ]);
@@ -48,7 +48,7 @@ final class HomeAction
     public function dashboard(Request $request, Response $response, $args)
     {
         $flash = $this->session->get('flash');
-        return $this->view->render($response, 'dashboard.twig',['flash' => $flash ] );
+        return $this->view->render($response, 'home/dashboard.twig',['flash' => $flash ] );
     }
 
     public function logout(Request $request, Response $response, $args)
@@ -59,7 +59,7 @@ final class HomeAction
     }
 
     public function login(Request $request, Response $response, $args){
-        $this->view->render($response, 'login.twig',
+        $this->view->render($response, 'home/login.twig',
             ['csrf' => [
                         'name' => $request->getAttribute('csrf_name'),
                         'value' => $request->getAttribute('csrf_value'),
@@ -93,7 +93,7 @@ final class HomeAction
         ]);;
         if ($request->getAttribute('csrf_status') === false) {
             $flash = 'CSRF faiure';
-            $this->view->render($response, 'login.twig',['errors' => $v->errors(),'flash' => $flash,'request' => $request]);
+            $this->view->render($response, 'home/login.twig',['errors' => $v->errors(),'flash' => $flash,'request' => $request]);
         }else{
             if($v->passes()){            
                 $user = User::where('username', $identifier)->orWhere('email', $identifier)->first();
@@ -104,11 +104,11 @@ final class HomeAction
                 }
                 else{
                     $flash = 'Sorry, you couldn\'t be logged in.';            
-                    $this->view->render($response, 'login.twig',['errors' => $v->errors(),'flash' => $flash,'request' => $request]);
+                    $this->view->render($response, 'home/login.twig',['errors' => $v->errors(),'flash' => $flash,'request' => $request]);
                 }
 
             }else{        
-                $this->view->render($response, 'login.twig',
+                $this->view->render($response, 'home/login.twig',
                     ['errors' => $v->errors(),
                     'request' => $request,
                     'csrf' => [
@@ -124,7 +124,7 @@ final class HomeAction
 
     public function register(Request $request, Response $response, $args)
     {
-        $this->view->render($response, 'register.twig');
+        $this->view->render($response, 'home/register.twig');
         return $response;
     }
 
@@ -155,7 +155,7 @@ final class HomeAction
             $flash = "registration failed.";
         }
         
-        $this->view->render($response, 'register.twig',['errors' => $v->errors(),'flash' => $flash,'request' => $request]);
+        $this->view->render($response, 'home/register.twig',['errors' => $v->errors(),'flash' => $flash,'request' => $request]);
         return $response;
     }
 }

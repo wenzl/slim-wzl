@@ -1,0 +1,103 @@
+{% extends 'home/layout.twig' %}
+
+{% set title = '13CH ' %}
+{% set datas = [1,2,3,4,5,6,7,8] %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div id="main" class="row span9">
+        <section id="theme-showcase">
+            <div class="heading-title">FEATURED THEME OF THE WEEK</div>
+            <div class="row">
+                <div class="theme-img span6 boxshadow">
+                    <a href="theme/wordpress/prime-premium-multi-purpose-wordpress-theme/1000841">
+                        <div class="browser-bar-xl big">
+                            <span class="browser-btn-xl fst"></span>
+                            <span class="browser-btn-xl snd"></span>
+                            <span class="browser-btn-xl trd"></span>
+                        </div>
+                        <img src="http://themeclue.com/img/theme/prime-premium-multi-purpose-wordpress-theme.jpg" alt="Prime - Premium Multi-Purpose WordPress Theme">
+                    </a>
+                </div><!-- theme-img -->
+                <div id="main-info" class="span3">
+                    <h1 class="featured"><a href="theme/wordpress/prime-premium-multi-purpose-wordpress-theme/1000841">Prime - Premium Multi-Purpose WordPress Theme</a></h1>
+                    <div class="info f">
+                        过氧化氢化学式为H2O2，纯过氧化氢是淡蓝色的黏稠液体，可任意比例与水混溶，是一种强氧化剂，水溶液俗称双氧水，为无色透明液体。其水溶液适用于医用伤口消毒及环境消毒和食品消毒。在一般情况下会缓慢分解成水和氧气，但分解速度极其慢，加快其反应速度的办法是加入催化剂。
+                    </div><!-- info -->
+                    <div class="feature-icons">
+                        <ul class="icons-list">
+                            <li class="responsive on" data-toggle="tooltip" data-original-title="It is responsive"></li>
+                            <li class="retina on" data-toggle="tooltip" data-original-title="It is retina-ready"></li>
+                            <li class="design on" data-toggle="tooltip" data-original-title="It has been featured"></li>
+                            <li id="obj0" class="fav off"><a id="fav0" data-toggle="tooltip" data-original-title="You must be logged in to add it to your favourites">Mark as favourite</a></li>
+                        </ul>
+                    </div><!-- feature-icons -->
+                    <div class="state bold">
+                        <span class="glyphicon glyphicon-eye-open text-primary"></span>1803 &nbsp; <span
+                                class="glyphicon glyphicon-floppy-saved text-info"></span><span
+                                id="obj_star1">123</span>
+                    </div><!-- state -->
+                </div><!-- main-info -->
+            </div><!-- row -->
+        </section>
+        {% for item in datas %}
+            <div class="result">
+                <div class="row">
+                    <div class="theme-img-s span3 boxshadow">
+                        <a href="theme/wordpress/badjohnny-a-minimal-wordpress-blog-theme/1000842">
+                            <div class="browser-bar">
+                                <span class="browser-btn fst"></span>
+                                <span class="browser-btn snd"></span>
+                                <span class="browser-btn trd"></span>
+                            </div>
+                            <img src="http://themeclue.com/img/theme/badjohnny-a-minimal-wordpress-blog-theme.jpg"
+                                 alt="BadJohnny - A Minimal WordPress Blog Theme">
+                        </a>
+                    </div><!-- theme-img-s -->
+                    <div class="main-info-s span6">
+                        <h2 class="featured">
+                            <a href="theme/wordpress/badjohnny-a-minimal-wordpress-blog-theme/1000842">过氧化氢，二氧化锰等或用短波射线照射[双氧水]</a>
+                        </h2>
+
+                        <div class="info r">
+                            过氧化氢化学式为H2O2，纯过氧化氢是淡蓝色的黏稠液体，可任意比例与水混溶，是一种强氧化剂，水溶液俗称双氧水，为无色透明液体。其水溶液适用于医用伤口消毒及环境消毒和食品消毒。在一般情况下会缓慢分解成水和氧气，但分解速度极其慢，加快其反应速度的办法是加入催化剂。
+                        </div>
+
+                        <!-- info -->
+                        <div class="info-icons">
+                            <div class="feature-icons">
+                                <ul class="icons-list">
+                                    <li class="responsive on" data-original-title="It is responsive"
+                                        data-toggle="tooltip"></li>
+                                    <li class="retina on" data-original-title="It is retina-ready"
+                                        data-toggle="tooltip"></li>
+                                    <li class="design on" data-original-title="It has been featured"
+                                        data-toggle="tooltip"></li>
+                                    <li id="obj1" class="fav off"><a
+                                                data-original-title="You must be logged in for add it to your favourites"
+                                                id="fav1" data-toggle="tooltip">Mark as favourite</a></li>
+                                </ul>
+                            </div><!-- feature-icons -->
+                            <div class="state bold">
+                                <span class="glyphicon glyphicon-eye-open text-primary"></span>1803 &nbsp; <span
+                                        class="glyphicon glyphicon-floppy-saved text-info"></span><span
+                                        id="obj_star1">123</span>
+                            </div><!-- state -->
+                        </div><!-- info-icons -->
+                    </div><!-- main-info-s -->
+                </div><!-- row -->
+            </div>
+        {% endfor %}
+        <div class="pagination">
+            <ul>
+                <li><a href="search?pag=1">PREV</a></li>
+                <li><a href="search?pag=1">1</a></li>
+                <li class="active"><a href="search?pag=2">2</a></li>
+                <li><a href="search?pag=3">3</a></li>
+                <li><a href="search?pag=4">4</a></li>
+                <li><a href="search?pag=5">5</a></li>
+                <li><a href="search?pag=3">NEXT</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

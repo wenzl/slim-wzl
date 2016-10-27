@@ -1,0 +1,36 @@
+{% extends 'home/layout.twig' %}
+{% set title = '注册 ' %}
+{% block title %}{{ title }}{% endblock %}
+{% block sidebar %}{% endblock %}
+{% block content %}
+    {% if flash %}{{ flash }}{% endif %}
+    <div id="main">
+        <form action="register" method="post" autocomplete="off">
+            <div>
+                <label for="email">邮箱</label>
+                <input type="text" name="email" id="email"
+                       {% if request.post('email') %}value="{{ request.post('email') }}"{% endif %}>
+                {% if errors.first('email') %}{{ errors.first('email') }}{% endif %}
+            </div>
+            <div>
+                <label for="username">用户名</label>
+                <input type="text" name="username" id="username"
+                       {% if request.post('username') %}value="{{ request.post('username') }}"{% endif %}>
+                {% if errors.first('username') %}{{ errors.first('username') }}{% endif %}
+            </div>
+            <div>
+                <label for="password">密码</label>
+                <input type="password" name="password" id="password">
+                {% if errors.first('password') %}{{ errors.first('password') }}{% endif %}
+            </div>
+            <div>
+                <label for="password_confirm">确认密码</label>
+                <input type="password" name="password_confirm" id="password_confirm">
+                {% if errors.first('password_confirm') %}{{ errors.first('password_confirm') }}{% endif %}
+            </div>
+            <div>
+                <input type="submit" value="Register" class="btn btn-default btn-primary">
+            </div>
+        </form>
+    </div>
+{% endblock %}
