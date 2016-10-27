@@ -1,18 +1,22 @@
 # Slim 3 Skeleton
 
-一个 `skeleton` 项目，从 `akrabat/slim3-skeleton` fork下来的， 包含 `scaffold` 、 `migrations`、`auth`,`Twig`、 `Flash messages`、 `eloquent ORM and Monolog`.
+一个 `skeleton` 项目，从 `akrabat/slim3-skeleton` fork下来的， 包含 `scaffold` 、 `migrations`、`auth`、`Twig`、 `Flash messages`、 `eloquent ORM and Monolog`.
 
 ## 创建你的项目：
 
     $ composer create-project -n -s dev mrcoco/slim3-eloquent-skeleton my-app
 
+如果速度慢造成创建不了你的项目，请运行下面命令再执行上面命令【切换国内`composer`镜像】
+
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
+
 ## 运行:
 
-1. `$ cd my-app`
-2. Change database setting `app\setting.php`
-3. `$ vendor/davedevelopment/phpmig/bin/phpmig migrate`
-4. `$ php -S 0.0.0.0:8888 -t public public/index.php`
-5. Browse to http://localhost:8888
+1. `$ cd my-app` 进入项目目录
+2. Change database setting `app\setting.php` 配置数据库详细
+3. `$ php cli.php migrate` 还原数据表
+4. `$ php -S 0.0.0.0:8888 -t public public/index.php` 运行程序
+5. Browse to http://localhost:8888 如果正常访问，那么恭喜你
 
 ## 主要目录
 
