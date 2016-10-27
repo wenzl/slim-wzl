@@ -6,7 +6,7 @@
 
     $ composer create-project -n -s dev mrcoco/slim3-eloquent-skeleton my-app
 
-如果速度慢造成创建不了你的项目，请运行下面命令再执行上面命令【切换过年`composer`镜像】
+如果速度慢造成创建不了你的项目，请运行下面命令再执行上面命令【切换国内`composer`镜像】
 
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
