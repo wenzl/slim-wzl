@@ -1,12 +1,12 @@
 # Slim 3 Skeleton
 
-This is a simple skeleton project fork from akrabat/slim3-skeleton that includes scaffold tool, migrations,auth,Twig, Flash messages, eloquent ORM and Monolog.
+一个 `skeleton` 项目，从 `akrabat/slim3-skeleton` fork下来的， 包含 `scaffold` 、 `migrations`、`auth`,`Twig`、 `Flash messages`、 `eloquent ORM and Monolog`.
 
-## Create your project:
+## 创建你的项目：
 
     $ composer create-project -n -s dev mrcoco/slim3-eloquent-skeleton my-app
 
-### Run it:
+## 运行:
 
 1. `$ cd my-app`
 2. Change database setting `app\setting.php`
@@ -14,7 +14,7 @@ This is a simple skeleton project fork from akrabat/slim3-skeleton that includes
 4. `$ php -S 0.0.0.0:8888 -t public public/index.php`
 5. Browse to http://localhost:8888
 
-## Key directories
+## 主要目录
 
 * `app`: Application code
 * `app/src`: All class files within the `App` namespace
@@ -24,7 +24,7 @@ This is a simple skeleton project fork from akrabat/slim3-skeleton that includes
 * `public`: Webserver root
 * `vendor`: Composer dependencies
 
-## Key files
+## 关键的文件
 
 * `public/index.php`: Entry point to application
 * `app/settings.php`: Configuration
@@ -34,7 +34,7 @@ This is a simple skeleton project fork from akrabat/slim3-skeleton that includes
 * `app/src/Action/HomeAction.php`: Action class for the home page
 * `app/templates/home.twig`: Twig template file for the home page
 
-## CLI Tools
+## 好用的客户端工具
 * Currently there are 3 supported commands:
 * `php cli.php create:action MyActionClassName`
 * `php cli.php create:middleware MyMiddlewareClassName`
@@ -42,7 +42,7 @@ This is a simple skeleton project fork from akrabat/slim3-skeleton that includes
 * `php cli.php create:scaffold MyModuleName`
 
 
-## Migration
+## 数据库相关
 *  migrate all data
 * php cli.php migrate
 
@@ -67,7 +67,7 @@ This is a simple skeleton project fork from akrabat/slim3-skeleton that includes
 * // Only specified MigrationID the migration / roll back
 * php cli.php [up | down] [MigrationID]
 
-### Demo User:
+### demo的账号密码:
 
 1. `admin` username: `admin@slim.dev` password: `password` 
 2. `moderator` username: `moderator@slim.dev` password: `password` 
