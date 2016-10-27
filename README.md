@@ -1,6 +1,6 @@
 # Slim 3 Skeleton
 
-一个 `skeleton` 项目，从 `akrabat/slim3-skeleton` fork下来的， 包含 `scaffold` 、 `migrations`、`auth`,`Twig`、 `Flash messages`、 `eloquent ORM and Monolog`.
+一个 `skeleton` 项目，从 `akrabat/slim3-skeleton` fork下来的， 包含 `scaffold` 、 `migrations`、`auth`、`Twig`、 `Flash messages`、 `eloquent ORM and Monolog`.
 
 ## 创建你的项目：
 
