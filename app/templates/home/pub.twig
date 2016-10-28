@@ -1,0 +1,144 @@
+{% extends 'home/layout.twig' %}
+{% set title = '个人信息 ' %}
+{% block title %}{{ title }}{% endblock %}
+{% block sidebar %}{% endblock %}
+{% block content %}
+    <div id="main" class="span11">
+        <div id="first-title">
+            <h1>Submit a theme</h1>
+        </div>
+        <div class="row">
+            <section id="main-section" class="span8">
+                <div class="alert alert-error" id="alert-error" style="display:none;">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <h3>Whoops! There's something wrong ... Please revise your submission and try again</h3>
+                    <ul id="txt_err">
+                        <li></li>
+                    </ul>
+                </div>
+                <form method="POST" name="modulo" enctype="multipart/form-data" onsubmit="return crtl_form_submit_theme('add')">
+                    <fieldset>
+                        <label for="title"><span class="bold">Title</span></label>
+                        <input id="title" name="title" type="text" placeholder="" value="" class="span6" maxlength="50">
+                        <span class="help-block">Max. 50 characters</span>
+                    </fieldset>
+                    <fieldset>
+                        <label for="description"><span class="bold">Description</span></label>
+                        <textarea id="description" name="description" rows="6" class="span5"></textarea>
+                        <span class="help-block">Some HTML is welcome! Take a look at the sidebar basic rules to know what tags are allowed</span>
+                    </fieldset>
+                    <fieldset>
+                        <label for="date"><span class="bold">Creation date</span></label>
+                        <input id="date" name="date" type="text" placeholder="" value="" class="span6" maxlength="10">
+                        <span class="help-block">The first release date of your theme, e.g. 24/11/2012</span>
+                    </fieldset>
+                    <fieldset>
+                        <label for="demo"><span class="bold">Live demo URL</span></label>
+                        <input id="demo" name="demo" type="text" placeholder="" value="" class="span6">
+                    </fieldset>
+                    <fieldset>
+                        <label for="purchase"><span class="bold">Purchase or download page URL</span></label>
+                        <input id="purchase" name="purchase" type="text" placeholder="" value="" class="span6">
+                    </fieldset>
+                    <fieldset>
+                        <label><span class="bold">Theme screenshot</span></label>
+                        <p>Please, just upload a <strong>screenshot</strong> (and only a screenshot!) of your theme. Image must be <strong>720px</strong> by <strong>400px</strong></p>
+                        <input type="file" name="file">
+                    </fieldset>
+                    <fieldset>
+                        <label><span class="bold">CMS</span></label>
+                        <select name="cms">
+                            <option value="1">Wordpress</option>
+                            <option value="2">Joomla!</option>
+                            <option value="3">Drupal</option>
+                            <option value="4">Magento</option>
+                            <option value="5">Tumblr</option>
+                            <option value="6">Ghost</option>
+                            <option value="7">Other</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <label><span class="bold">Kind</span></label>
+                        <select multiple="multiple" id="kind" name="kind[]">
+                            <option value="1">Blog</option>
+                            <option value="2">News/Magazine</option>
+                            <option value="3">Portfolio/Personal</option>
+                            <option value="4">Photography</option>
+                            <option value="5">Ecommerce</option>
+                            <option value="6">Community</option>
+                            <option value="7">Forum</option>
+                        </select>
+                        <span class="help-block">Multiple categories are allowed</span>
+                    </fieldset>
+                    <fieldset>
+                        <label for="price"><span class="bold">Price </span></label>
+                        <input id="price" name="price" type="text" placeholder="" value="" class="span1" maxlength="3">
+                        <span class="help-block">e.g. Enter "45" for 45 US dollars or "0" if it is free</span>
+                    </fieldset>
+                    <fieldset>
+                        <label><span class="bold">Other features</span></label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="responsive">
+                            It is fully <strong>responsive</strong>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="retina">
+                            It is <strong>retina-ready</strong> <em>(it uses @2x graphic elements or icon fonts)</em>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="scrolling">
+                            It provides <strong>one-page scrolling</strong> layouts <em>(<a href="http://webdesignledger.com/inspiration/21-inspiring-single-page-websites" title="One-page website templates" target="_blank">Some examples?</a>)</em>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="shortcodes">
+                            It provides custom <strong>shortcodes</strong>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="ads">
+                            It is <strong>ads-ready</strong> <em>(it includes some ads widget)</em>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="crossbrowser">
+                            It is fully compatible with <strong>Internet Explorer 6-8</strong>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="psds">
+                            The pack includes <strong>PSDs</strong> or other <strong>design project files</strong>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="documentation">
+                            The pack includes <strong>help files</strong>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="support">
+                            Online <strong>support</strong>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label><span class="bold">Just few seconds more...</span></label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="1" name="condition">
+                            Ok, one last field! Please be sure that all the details you've entered are correct (we will revise them anyway). Then we'll review your submission for acceptance into the <strong>Themeclue gallery</strong>. Thanks for your time, check this field and click on "submit"!
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <button type="submit" class="btn btn-primary">SUBMIT</button>
+                    </fieldset>
+                </form>
+            </section>
+
+            <section id="r-sidebar" class="span3">
+                <div id="rules">
+                    <h4>SOME BASIC RULES</h4>
+                    <ul class="tips">
+                        <li><strong>You must be the author</strong> of the theme you're submitting</li>
+                        <li>Provide a <strong>full and honest description</strong> of your theme</li>
+                        <li>Allowed <strong>HTML tags</strong> for the <strong>Description</strong> are: p, a, br, hr, strong, em, h2, h3, h4, h5, h6, blockquote, pre, code, ul, ol, li.</li>
+                        <li>Upload a representative and attractive <strong>screenshot</strong> of your theme, it will be the preview image</li>
+                        <li>Don't post <strong>inappropriate content</strong> (e.g. illegal, offensive, racist, pornographic, etc.)</li>
+                    </ul>
+                </div><!-- rules -->
+            </section><!-- r-sidebar -->
+        </div><!-- row -->
+    </div>
+{% endblock %}

@@ -159,6 +159,13 @@ final class HomeAction
         return $response;
     }
 
+    /**
+     * 资源列表
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
     public function resource(Request $request, Response $response, $args){
         $this->logger->info("Home page action dispatched");
 
@@ -168,4 +175,73 @@ final class HomeAction
         ]);
         return $response;
     }
+
+    /**
+     * 个人资源列表
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
+    public function who(Request $request, Response $response, $args){
+        $this->logger->info("Home page action dispatched");
+
+        $this->view->render($response, 'home/who.twig',[
+            'user' => User::all(),
+
+        ]);
+        return $response;
+    }
+
+
+    /**个人信息
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
+    public function im(Request $request, Response $response, $args){
+        $this->logger->info("Home page action dispatched");
+
+        $this->view->render($response, 'home/im.twig',[
+            'user' => User::all(),
+
+        ]);
+        return $response;
+    }
+
+    /**
+     * 个人收藏
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
+    public function ifav(Request $request, Response $response, $args){
+        $this->logger->info("Home page action dispatched");
+
+        $this->view->render($response, 'home/ifav.twig',[
+            'user' => User::all(),
+
+        ]);
+        return $response;
+    }
+
+    /**
+     * 个人收藏
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
+    public function pub(Request $request, Response $response, $args){
+        $this->logger->info("Home page action dispatched");
+
+        $this->view->render($response, 'home/pub.twig',[
+            'user' => User::all(),
+
+        ]);
+        return $response;
+    }
+
 }

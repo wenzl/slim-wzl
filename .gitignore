@@ -2,3 +2,4 @@
 cache/*
 log/*
 cache/*
+app/settings.php

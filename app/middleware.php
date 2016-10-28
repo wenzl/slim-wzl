@@ -3,14 +3,13 @@ $app->add($app->getContainer()->get('csrf'));
 $app->add(function($request, $response, $next){
 	switch ($request->getUri()->getPath()) {
 		case '/':
+			return $response->withRedirect('/home/');
 			break;
 		case '/home/':
 			break;
 		case '/home/login':
-			//$response->write(' Please Insert Username and password ');
 			break;
 		case '/home/register':
-			
 			break;
 		case '/home/logout':
 			//$response->write(' logout ');

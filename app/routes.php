@@ -7,6 +7,10 @@
 $app->group('/home', function(){
     $this->get('/', 'App\Action\HomeAction:dispatch')->setName('homepage');
     $this->get('/resource', 'App\Action\HomeAction:resource')->setName('resource');
+    $this->get('/who', 'App\Action\HomeAction:who')->setName('who');
+    $this->get('/im', 'App\Action\HomeAction:im')->setName('im');
+    $this->get('/pub', 'App\Action\HomeAction:pub')->setName('pub');
+    $this->get('/ifav', 'App\Action\HomeAction:ifav')->setName('ifav');
     $this->get('/login', 'App\Action\HomeAction:login')->setName('login');
     $this->get('/logout', 'App\Action\HomeAction:logout')->setName('logout');
     $this->get('/register', 'App\Action\HomeAction:register')->setName('register');

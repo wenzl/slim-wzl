@@ -1,0 +1,118 @@
+{% extends 'home/layout.twig' %}
+{% set title = '收藏列表 ' %}
+{% block title %}{{ title }}{% endblock %}
+{% block sidebar %}{% endblock %}
+{% block content %}
+    <div id="main" class="span11">
+        <div class="alert alert-error" id="alert-error" style="display:none;">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h3>Whoops! There's something wrong ... Please revise your submission and try again</h3>
+            <ul id="txt_err">
+                <li></li>
+            </ul>
+        </div><div class="alert alert-error" id="alert-error" style="display:none;">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h3>Whoops! There's something wrong ... Please revise your submission and try again</h3>
+            <ul id="txt_err">
+                <li></li>
+            </ul>
+        </div>
+        <div id="first-title" class="clearfix">
+            <a href="#">
+                <img class="avatar-b pull-left" alt="172721192" src="http://themeclue.com/img/profile/avatar-120.png"></a>
+            <h1>172721192</h1>
+            <div class="profile-meta">
+                <ul class="unstyled">
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <section id="main-section" class="span8">
+
+                <ul class="nav nav-tabbed">
+                    <li><a class="bold" href="../172721192">THEMES <span class="regular">(0)</span></a></li>
+                    <li><a class="bold" href="../edit-profile">EDIT PROFILE</a></li>
+                    <li class="active"><a class="bold" href="">FAVOURITES <span class="regular" id="count_fav">(1)</span></a></li>
+                    <li><a class="bold" href="../saved-searches">SAVED SEARCHES</a></li>
+                </ul>
+                <div id="favourites">
+                    <div class="theme-results">
+                        <div class="result last-result" id="Result">
+                            <div class="row">
+                                <div class="theme-img-s span3 boxshadow">
+                                    <a href="/theme/ghost/marquis-stylish-content-focused-ghost-theme/1000753">
+                                        <div class="browser-bar">
+                                            <span class="browser-btn fst"></span>
+                                            <span class="browser-btn snd"></span>
+                                            <span class="browser-btn trd"></span>
+                                        </div>
+                                        <img src="http://themeclue.com/img/theme/marquis-stylish-content-focused-ghost-theme.jpg" alt="MARQUIS - Stylish &amp; Content-Focused Ghost Theme">
+                                    </a>
+                                </div><!-- theme-img-s -->
+                                <div class="main-info-s span5">
+                                    <h2 class="featured"><a href="../theme/ghost/marquis-stylish-content-focused-ghost-theme/1000753">MARQUIS - Stylish &amp; Content-Focused Ghost Theme</a></h2>
+                                    <div class="info r">
+                                        A <span class="yellow"><strong>Premium Ghost theme</strong></span> suitable for <strong>Blog</strong>. It is responsive and retina. Created on 19 Mar 2015 by <strong><a href="../sunflowertheme" 0="">sunflowertheme</a></strong>. You can purchase it for $19 on <a class="bold" href="http://themeforest.net" target="_blank">Themeforest.net</a>                    </div><!-- info -->
+                                    <div class="info-icons">
+                                        <div class="feature-icons">
+                                            <ul class="icons-list">
+                                                <li class="responsive on" data-toggle="tooltip" data-original-title="It is responsive"></li>
+                                                <li class="retina on" data-toggle="tooltip" data-original-title="It is retina-ready"></li>
+                                                <li class="design off" data-toggle="tooltip" data-original-title="It has not been featured"></li>
+                                                <li id="obj" class="fav on"><a onclick="add_favourites('753','','../','1','Result')" id="fav" data-toggle="tooltip" data-original-title="Marked as favourite">Marked as favourite</a></li>
+                                            </ul>
+                                        </div><!-- feature-icons -->
+                                        <div class="state bold">
+                                            1149 Views <span class="unemph">&amp;</span> <span id="obj_star">1 Favourite</span>
+                                        </div><!-- state -->
+                                    </div><!-- info-icons -->
+                                </div><!-- main-info-s -->
+                            </div><!-- row -->
+                        </div><!-- result -->
+
+                    </div><!-- theme-results -->
+
+
+                </div><!-- favourites -->
+            </section>
+
+            <section id="r-sidebar" class="span3">
+
+                <div id="popular" class="sidebar-block hrfix">
+                    <h4 class="sidebar-title">POPULAR THEMES</h4>
+                    <div class="theme-thumb odd boxshadow">
+                        <a href="theme/magento/venedor-premium-magento-theme/1000341">
+                            <img src="http://themeclue.com/img/theme/venedor-premium-magento-theme.png" alt="Venedor - Premium Magento Theme">
+                        </a>
+                    </div>
+                    <div class="theme-thumb boxshadow">
+                        <a href="theme/wordpress/display-creative-wordpress-theme/1000451">
+                            <img src="http://themeclue.com/img/theme/display-creative-wordpress-theme.png" alt="Display - Creative WordPress Theme">
+                        </a>
+                    </div>
+                    <div class="theme-thumb odd boxshadow">
+                        <a href="theme/ghost/phantom-responsive-parallax-theme-for-ghost/1000439">
+                            <img src="http://themeclue.com/img/theme/phantom-responsive-parallax-theme-for-ghost.jpg" alt="Phantom - Responsive Parallax Theme for Ghost">
+                        </a>
+                    </div>
+                    <div class="theme-thumb last-child boxshadow">
+                        <a href="theme/wordpress/element-multi-purpose-wordpress-theme/1000737">
+                            <img src="http://themeclue.com/img/theme/element-multi-purpose-wordpress-theme.jpg" alt="Element - Multi-Purpose Wordpress Theme ">
+                        </a>
+                    </div>
+                </div><!-- popular -->
+            </section><!-- r-sidebar -->
+        </div><!-- row -->
+        <div class="pagination">
+            <ul>
+                <li><a href="search?pag=1">PREV</a></li>
+                <li><a href="search?pag=1">1</a></li>
+                <li class="active"><a href="search?pag=2">2</a></li>
+                <li><a href="search?pag=3">3</a></li>
+                <li><a href="search?pag=4">4</a></li>
+                <li><a href="search?pag=5">5</a></li>
+                <li><a href="search?pag=3">NEXT</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

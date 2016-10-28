@@ -1,0 +1,159 @@
+{% extends 'home/layout.twig' %}
+{% set title = '个人信息 ' %}
+{% block title %}{{ title }}{% endblock %}
+{% block sidebar %}{% endblock %}
+{% block content %}
+    <div id="main" class="span11">
+        <div class="alert alert-error" id="alert-error" style="display:none;">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h3>Whoops! There's something wrong ... Please revise your submission and try again</h3>
+            <ul id="txt_err">
+                <li></li>
+            </ul>
+        </div><div class="alert alert-error" id="alert-error" style="display:none;">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h3>Whoops! There's something wrong ... Please revise your submission and try again</h3>
+            <ul id="txt_err">
+                <li></li>
+            </ul>
+        </div>
+        <div id="first-title" class="clearfix">
+            <a href="#">
+                <img class="avatar-b pull-left" alt="172721192" src="http://themeclue.com/img/profile/avatar-120.png"></a>
+            <h1>172721192</h1>
+            <div class="profile-meta">
+                <ul class="unstyled">
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <section id="main-section" class="span8">
+
+                <ul class="nav nav-tabbed">
+                    <li><a class="bold" href="172721192">THEMES <span class="regular">(0)</span></a></li>
+                    <li class="active"><a class="bold" href="#">EDIT PROFILE</a></li>
+                    <li><a class="bold" href="172721192/favourites">FAVOURITES <span class="regular">(1)</span></a></li>
+                    <li><a class="bold" href="saved-searches">SAVED SEARCHES</a></li>
+                </ul>
+                <div id="edit">
+                    <form name="modulo" class="form-horizontal" method="post" action="edit-profile.php" enctype="multipart/form-data" onsubmit="return crtl_form_edit_profile()">
+                        <input type="hidden" name="id" value="403">
+                        <div class="control-group">
+                            <label class="control-label"><span class="bold">Avatar</span></label>
+                            <div class="controls">
+                                <img class="avatar-b pull-left" alt="172721192" src="http://themeclue.com/img/profile/avatar-120.png">
+                                <input type="file" name="ImageFile">
+                                <span class="help-block">JPG, GIF or PNG. Max size of 400K</span>
+                                <a href="#" id="delete_avatar" class="bold hidden">Delete avatar</a>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="name"><span class="bold">Your name</span></label>
+                            <div class="controls">
+                                <input type="text" id="name" name="name" value="172721192" maxlength="25">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="username"><span class="bold">Username</span></label>
+                            <div class="controls">
+                                <input type="text" id="username" name="username" value="172721192" maxlength="20">
+                                <span class="help-block">It'll be your URL. http:/themeclue.com/172721192</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="email"><span class="bold">Email</span></label>
+                            <div class="controls">
+                                <input type="text" id="email" name="email" value="172721192@qq.com">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="website"><span class="bold">Website</span></label>
+                            <div class="controls">
+                                <input type="text" id="website" name="website" value="">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="twitter"><span class="bold">Twitter</span></label>
+                            <div class="controls">
+                                <input type="text" id="twitter" name="twitter" value="">
+                                <span class="help-block">Just your username on Twitter</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="bio"><span class="bold">About you</span></label>
+                            <div class="controls">
+                                <textarea id="bio" rows="4" class="span5" name="bio" onkeyup="ContaCaratteri()"></textarea>
+                                <span class="help-block">Urls are automatically hyperlinked. Line breaks and paragraphs are automatically generated. a, strong, em, blockquote, pre and code are accepted. <span id="conta" class="bold">200 characthers left</span></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn btn-primary higher">UPDATE SETTINGS</button>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
+                    <form name="modulo2" class="form-horizontal" method="post" action="edit-profile.php" onsubmit="return crtl_form_edit_passw_profile()">
+                        <div class="control-group">
+                            <label class="control-label" for="oldpass"><span class="bold">Old Password</span></label>
+                            <div class="controls">
+                                <input type="password" id="old_pass" name="old_pass" maxlength="40">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="newpass"><span class="bold">New Password</span></label>
+                            <div class="controls">
+                                <input type="password" id="new_pass" name="new_pass" maxlength="40">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn higher">CHANGE PASSWORD</button>
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                    <form name="modulo3" class="form-horizontal" method="post" action="edit-profile.php" onsubmit="return crtl_form_edit_profile()">
+                        <div class="control-group">
+                            <label class="control-label"><span class="bold">Delete account</span></label>
+                            <div class="controls">
+                                <label class="checkbox delete-account">
+                                    <input id="deletecheck" type="checkbox" value="1">
+                                    We are sorry to hear that you want to leave us but, if that's your final decision, then check this field and click on "delete account" to permanently delete your account on Themeclue. Please remember that by deleting your account all of your posted content on Themeclue (themes included) will be removed too.
+                                </label>
+                                <button id="delete_account" type="button" class="btn higher">DELETE ACCOUNT</button>
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- edit -->
+            </section>
+
+            <section id="r-sidebar" class="span3">
+
+                <div id="popular" class="sidebar-block hrfix">
+                    <h4 class="sidebar-title">POPULAR THEMES</h4>
+                    <div class="theme-thumb odd boxshadow">
+                        <a href="theme/magento/venedor-premium-magento-theme/1000341">
+                            <img src="http://themeclue.com/img/theme/venedor-premium-magento-theme.png" alt="Venedor - Premium Magento Theme">
+                        </a>
+                    </div>
+                    <div class="theme-thumb boxshadow">
+                        <a href="theme/wordpress/display-creative-wordpress-theme/1000451">
+                            <img src="http://themeclue.com/img/theme/display-creative-wordpress-theme.png" alt="Display - Creative WordPress Theme">
+                        </a>
+                    </div>
+                    <div class="theme-thumb odd boxshadow">
+                        <a href="theme/ghost/phantom-responsive-parallax-theme-for-ghost/1000439">
+                            <img src="http://themeclue.com/img/theme/phantom-responsive-parallax-theme-for-ghost.jpg" alt="Phantom - Responsive Parallax Theme for Ghost">
+                        </a>
+                    </div>
+                    <div class="theme-thumb last-child boxshadow">
+                        <a href="theme/wordpress/element-multi-purpose-wordpress-theme/1000737">
+                            <img src="http://themeclue.com/img/theme/element-multi-purpose-wordpress-theme.jpg" alt="Element - Multi-Purpose Wordpress Theme ">
+                        </a>
+                    </div>
+                </div><!-- popular -->
+            </section><!-- r-sidebar -->
+        </div><!-- row -->
+    </div>
+{% endblock %}
