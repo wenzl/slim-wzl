@@ -5,7 +5,7 @@
 {% block content %}
     <div id="main" class="span11">
         <div id="first-title">
-            <h1>Submit a theme</h1>
+            <h1>发布一篇文章</h1>
         </div>
         <div class="row">
             <section id="main-section" class="span8">
@@ -18,35 +18,36 @@
                 </div>
                 <form method="POST" name="modulo" enctype="multipart/form-data" onsubmit="return crtl_form_submit_theme('add')">
                     <fieldset>
-                        <label for="title"><span class="bold">Title</span></label>
+                        <label for="title"><span class="bold">标题</span></label>
                         <input id="title" name="title" type="text" placeholder="" value="" class="span6" maxlength="50">
-                        <span class="help-block">Max. 50 characters</span>
+                        <span class="help-block">最多50个字</span>
                     </fieldset>
                     <fieldset>
-                        <label for="description"><span class="bold">Description</span></label>
+                        <label><span class="bold">漂亮的封面</span></label>
+                        <div class="col-sm-5">
+                            <a href="#" class="thumbnail">
+                                <img data-src="holder.js/100%x180" alt="100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjYxIiB5PSI5MCIgc3R5bGU9ImZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE3MXgxODA8L3RleHQ+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%x; display: block;">
+                            </a>
+                        </div>
+                        <p>选择一张展示的封面<strong>720px</strong> * <strong>400px</strong></p>
+                        <input type="file" name="file" class="btn higher">
+                    </fieldset>
+                    <fieldset>
+                        <label for="description"><span class="bold">文章摘要</span></label>
                         <textarea id="description" name="description" rows="6" class="span5"></textarea>
-                        <span class="help-block">Some HTML is welcome! Take a look at the sidebar basic rules to know what tags are allowed</span>
                     </fieldset>
                     <fieldset>
-                        <label for="date"><span class="bold">Creation date</span></label>
+                        <label for="description"><span class="bold">文章内容</span></label>
+                        <textarea id="description" name="description" rows="6" class="span5"></textarea>
+                        <span class="help-block">支持Markdown和HTML格式</span>
+                    </fieldset>
+                    <fieldset>
+                        <label for="date"><span class="bold">创建时间</span></label>
                         <input id="date" name="date" type="text" placeholder="" value="" class="span6" maxlength="10">
-                        <span class="help-block">The first release date of your theme, e.g. 24/11/2012</span>
+                        <span class="help-block">时间格式：2016/10/29 21:03:59</span>
                     </fieldset>
                     <fieldset>
-                        <label for="demo"><span class="bold">Live demo URL</span></label>
-                        <input id="demo" name="demo" type="text" placeholder="" value="" class="span6">
-                    </fieldset>
-                    <fieldset>
-                        <label for="purchase"><span class="bold">Purchase or download page URL</span></label>
-                        <input id="purchase" name="purchase" type="text" placeholder="" value="" class="span6">
-                    </fieldset>
-                    <fieldset>
-                        <label><span class="bold">Theme screenshot</span></label>
-                        <p>Please, just upload a <strong>screenshot</strong> (and only a screenshot!) of your theme. Image must be <strong>720px</strong> by <strong>400px</strong></p>
-                        <input type="file" name="file">
-                    </fieldset>
-                    <fieldset>
-                        <label><span class="bold">CMS</span></label>
+                        <label><span class="bold">文章类型</span></label>
                         <select name="cms">
                             <option value="1">Wordpress</option>
                             <option value="2">Joomla!</option>
@@ -58,7 +59,7 @@
                         </select>
                     </fieldset>
                     <fieldset>
-                        <label><span class="bold">Kind</span></label>
+                        <label><span class="bold">特征标签</span></label>
                         <select multiple="multiple" id="kind" name="kind[]">
                             <option value="1">Blog</option>
                             <option value="2">News/Magazine</option>
@@ -76,42 +77,10 @@
                         <span class="help-block">e.g. Enter "45" for 45 US dollars or "0" if it is free</span>
                     </fieldset>
                     <fieldset>
-                        <label><span class="bold">Other features</span></label>
+                        <label><span class="bold">其他</span></label>
                         <label class="checkbox">
                             <input type="checkbox" value="1" name="responsive">
-                            It is fully <strong>responsive</strong>
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" value="1" name="retina">
-                            It is <strong>retina-ready</strong> <em>(it uses @2x graphic elements or icon fonts)</em>
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" value="1" name="scrolling">
-                            It provides <strong>one-page scrolling</strong> layouts <em>(<a href="http://webdesignledger.com/inspiration/21-inspiring-single-page-websites" title="One-page website templates" target="_blank">Some examples?</a>)</em>
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" value="1" name="shortcodes">
-                            It provides custom <strong>shortcodes</strong>
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" value="1" name="ads">
-                            It is <strong>ads-ready</strong> <em>(it includes some ads widget)</em>
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" value="1" name="crossbrowser">
-                            It is fully compatible with <strong>Internet Explorer 6-8</strong>
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" value="1" name="psds">
-                            The pack includes <strong>PSDs</strong> or other <strong>design project files</strong>
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" value="1" name="documentation">
-                            The pack includes <strong>help files</strong>
-                        </label>
-                        <label class="checkbox">
-                            <input type="checkbox" value="1" name="support">
-                            Online <strong>support</strong>
+                            打赏 <strong>支付宝&微信</strong>
                         </label>
                     </fieldset>
                     <fieldset>

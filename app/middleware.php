@@ -12,7 +12,6 @@ $app->add(function($request, $response, $next){
 		case '/home/register':
 			break;
 		case '/home/logout':
-			//$response->write(' logout ');
 			break;
 		case '/home/dashboard':
 			if(! App\Helper\Acl::isLogged()){
