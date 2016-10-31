@@ -1113,9 +1113,8 @@ button.btn {
     font-weight: 500;
     color:#919599;
 }
-
 .nav > li > ul.dropdown-menu li > a:hover,.nav > li > ul.dropdown-menu li > a:focus {
-    background-color:#FF6B45;
+    background: #FF6B45!important;
     color:#fff;
     text-decoration:none;
 }
@@ -1678,9 +1677,9 @@ button.btn {
     display:inline-block;
     margin-top:0!important;
     margin-left:6px;
-    width:12px;
+    width:9px;
     height:11px;
-    background:url(../img/arrows.png) -24px 0 no-repeat;
+    /*background:url(../img/arrows.png) -24px 0 no-repeat;*/
     content:"";
 }
 
@@ -2331,7 +2330,7 @@ a.accordion-toggle.expanded, .accordion-button > a.expanded {
 }
 
 .nav-tabbed > .active > a, .nav-tabbed > .active > a:hover, .etabs > .active > a, .etabs > .active > a:hover {
-    background: url("../img/active-bar.png") repeat-x bottom left;
+    /*background: url("../img/active-bar.png") repeat-x bottom left;*/
     color:#373E44;
 }
 
@@ -3333,8 +3332,8 @@ button.close {
         margin-left:0;
     }
     .row:hover{
-        border: 1px dotted #1f2021;
-        background-color: #00A6DA;
+        /*border: 1px dotted #1f2021;*/
+        /*background-color: #00A6DA;*/
     }
 
     [class*="span"] {

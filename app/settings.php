@@ -41,7 +41,7 @@ return [
             'database'  => 'slim_project',
             'username'  => 'root',
             'password'  => '',
-			'port'=>'33306',
+			'port'=>'3306',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

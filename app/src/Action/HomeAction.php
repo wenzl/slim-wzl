@@ -40,7 +40,7 @@ final class HomeAction
         
         $this->view->render($response, 'home/home.twig',[
             'user' => User::all(),
-            
+            'islogined'=>!Acl::isLogged()
             ]);
         return $response;
     }
@@ -55,15 +55,17 @@ final class HomeAction
     {
         $session    = new \App\Helper\Session;
         $session::destroy();
-        return $response->withRedirect('login');
+        return $response->withRedirect('/home/');
     }
 
     public function login(Request $request, Response $response, $args){
         $this->view->render($response, 'home/login.twig',
-            ['csrf' => [
+            [
+                'csrf' => [
                         'name' => $request->getAttribute('csrf_name'),
                         'value' => $request->getAttribute('csrf_value'),
                       ],
+                'islogined'=>!Acl::isLogged()
             ]);
         return $response;
     }
@@ -100,7 +102,7 @@ final class HomeAction
                 if($user && $this->hash->passwordCheck($password, $user->password)){                
                     $this->session->set($this->auth['session'],$user->id);
                     $this->session->set($this->auth['group'],$user->group_id);
-                    return $response->withRedirect('dashboard');
+                    return $response->withRedirect('im');
                 }
                 else{
                     $flash = 'Sorry, you couldn\'t be logged in.';            
@@ -171,7 +173,7 @@ final class HomeAction
 
         $this->view->render($response, 'home/resource.twig',[
             'user' => User::all(),
-
+            'islogined'=>!Acl::isLogged()
         ]);
         return $response;
     }
@@ -188,7 +190,7 @@ final class HomeAction
 
         $this->view->render($response, 'home/who.twig',[
             'user' => User::all(),
-
+            'islogined'=>!Acl::isLogged()
         ]);
         return $response;
     }
@@ -205,7 +207,7 @@ final class HomeAction
 
         $this->view->render($response, 'home/im.twig',[
             'user' => User::all(),
-
+            'islogined'=>!Acl::isLogged()
         ]);
         return $response;
     }
@@ -222,7 +224,7 @@ final class HomeAction
 
         $this->view->render($response, 'home/ifav.twig',[
             'user' => User::all(),
-
+            'islogined'=>!Acl::isLogged()
         ]);
         return $response;
     }
@@ -239,7 +241,23 @@ final class HomeAction
 
         $this->view->render($response, 'home/pub.twig',[
             'user' => User::all(),
+            'islogined'=>!Acl::isLogged()
+        ]);
+        return $response;
+    }
+    /**
+     * 个人收藏
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
+    public function pubs(Request $request, Response $response, $args){
+        $this->logger->info("Home page action dispatched");
 
+        $this->view->render($response, 'home/pubs.twig',[
+            'user' => User::all(),
+            'islogined'=>!Acl::isLogged()
         ]);
         return $response;
     }
