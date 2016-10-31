@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a30e223-9782-4406-921c-d16aab51b382" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/home/ifav.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/home/im.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/home/pub.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/home/who.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/middleware.php" afterPath="$PROJECT_DIR$/app/middleware.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/settings.php" afterPath="$PROJECT_DIR$/app/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/Action/HomeAction.php" afterPath="$PROJECT_DIR$/app/src/Action/HomeAction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/home/home.twig" afterPath="$PROJECT_DIR$/app/templates/home/home.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/home/resource.twig" afterPath="$PROJECT_DIR$/app/templates/home/resource.twig" />
     </list>
     <ignored path="my-app.iws" />
@@ -34,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HomeAction.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeAction.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/Action/HomeAction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8903002">
+            <state vertical-scroll-proportion="-27.535715">
               <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
               <folding>
                 <element signature="e#29#49#0#PHP" expanded="true" />
@@ -61,18 +52,18 @@
       <file leaf-file-name="home.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/home/home.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.178571">
-              <caret line="62" column="100" selection-start-line="62" selection-start-column="100" selection-end-line="62" selection-end-column="100" />
+            <state vertical-scroll-proportion="-8.821428">
+              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resource.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="resource.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/templates/home/resource.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.392857">
-              <caret line="5" column="33" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.46073902">
+              <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -151,8 +142,6 @@
         <option value="$PROJECT_DIR$/app/templates/home/login.twig" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/templates/home/layout.twig" />
-        <option value="$PROJECT_DIR$/app/templates/home/home.twig" />
-        <option value="$PROJECT_DIR$/app/templates/home/resource.twig" />
         <option value="$PROJECT_DIR$/app/middleware.php" />
         <option value="$PROJECT_DIR$/app/templates/home/who.twig" />
         <option value="$PROJECT_DIR$/app/templates/home/i.twig" />
@@ -162,6 +151,8 @@
         <option value="$PROJECT_DIR$/app/templates/home/pub.twig" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/src/Action/HomeAction.php" />
+        <option value="$PROJECT_DIR$/app/templates/home/home.twig" />
+        <option value="$PROJECT_DIR$/app/templates/home/resource.twig" />
       </list>
     </option>
   </component>
@@ -669,14 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/home.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.178571">
-          <caret line="62" column="100" selection-start-line="62" selection-start-column="100" selection-end-line="62" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -751,14 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home/resource.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.392857">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/middleware.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.464286">
@@ -777,11 +752,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Action/HomeAction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8903002">
+        <state vertical-scroll-proportion="-27.535715">
           <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
           <folding>
             <element signature="e#29#49#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/home/home.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.821428">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/home/resource.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46073902">
+          <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
